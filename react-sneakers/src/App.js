@@ -6,7 +6,9 @@ function App() {
 
     <div className="overlay">
       <div className="drawer">
-        <h2 className="mb-30">Корзина</h2>
+        <h2 className="d-flex justify-between mb-30">
+          Корзина<img className="remove-btn cu-p" src="/img/btn-remove.svg" alt="Remove"/>
+        </h2>
         <div className="items">
             <div className="cart-Item d-flex align-center mb-20">
               <div className="cart-Item__img" style={{backgroundImage: 'url(/img/sneackers/2.jpg)'}}></div>
@@ -40,11 +42,7 @@ function App() {
                 <b>1074 руб.</b>
               </li>
             </ul>
-            <button><span>Оформить заказ</span> <span><svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 7H14.7143" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M8.71436 1L14.7144 7L8.71436 13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg></span>
-            </button>
+            <button className="green-button">Оформить заказ<img src="/img/right-arrow.svg" alt="" /></button>
         </div>
       </div>
     </div>
