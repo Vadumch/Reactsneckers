@@ -12,8 +12,26 @@ const arr = [
 function App() {
   return (
     <div className="Wrapper clear">
+<<<<<<< HEAD
 
       <Drawer />
+=======
+   {/* проверка */}
+    <div className="overlay">
+      <div className="drawer">
+        <h2 className="d-flex justify-between mb-30">
+          Корзина<img className="remove-btn cu-p" src="/img/btn-remove.svg" alt="Remove"/>
+        </h2>
+        <div className="items">
+            <div className="cart-Item d-flex align-center mb-20">
+              <div className="cart-Item__img" style={{backgroundImage: 'url(/img/sneackers/2.jpg)'}}></div>
+              <div className="mr-20 flex">
+                <p className="mb-5">Мужские Кроссовки Nike Air Max 270</p>
+                <b>12 999 руб.</b>
+              </div>
+             <img className="remove-btn" src="/img/btn-remove.svg" alt="Remove"/>
+           </div>
+>>>>>>> b3ba749728b55b74a12f5a8d0317e610d988b3bd
 
       <Header /> 
 
