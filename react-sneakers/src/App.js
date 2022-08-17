@@ -1,3 +1,4 @@
+import React from "react"
 import Card from "./components/Card";
 import Header from "./components/Header";
 import Drawer from "./components/Drawer";
@@ -10,30 +11,13 @@ const arr = [
 ];
 
 function App() {
+  const [cartOpenend, setCardOpened] = React.useState(false);
   return (
     <div className="Wrapper clear">
-<<<<<<< HEAD
 
-      <Drawer />
-=======
-   {/* проверка */}
-    <div className="overlay">
-      <div className="drawer">
-        <h2 className="d-flex justify-between mb-30">
-          Корзина<img className="remove-btn cu-p" src="/img/btn-remove.svg" alt="Remove"/>
-        </h2>
-        <div className="items">
-            <div className="cart-Item d-flex align-center mb-20">
-              <div className="cart-Item__img" style={{backgroundImage: 'url(/img/sneackers/2.jpg)'}}></div>
-              <div className="mr-20 flex">
-                <p className="mb-5">Мужские Кроссовки Nike Air Max 270</p>
-                <b>12 999 руб.</b>
-              </div>
-             <img className="remove-btn" src="/img/btn-remove.svg" alt="Remove"/>
-           </div>
->>>>>>> b3ba749728b55b74a12f5a8d0317e610d988b3bd
+      {cartOpenend ? <Drawer onClose={() => setCardOpened(false)} /> : null}
 
-      <Header /> 
+      <Header onClickCard={() => setCardOpened(true)} /> 
 
       <div className="content p-40">
         <div className="d-flex align-center justify-between mb-40">
@@ -52,7 +36,8 @@ function App() {
             title={obj.title}
             price={obj.price} 
             imageUrl={obj.imageUrl}
-            onClick={() => console.log(obj)}
+            onFavorite={() => console.log('Добавили в закладки')}
+            onPlus={() => console.log('Нажали плюс')}
           />
         ))} 
         </div>
