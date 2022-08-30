@@ -1,29 +1,21 @@
-function Drawer (props) {
+function Drawer ({ onClose, items = []}) {
     return(
      <div  className="overlay">
         <div className="drawer">
         <h2 className="d-flex justify-between mb-30">
-          Корзина<img className="remove-btn cu-p" src="/img/btn-remove.svg" alt="Remove" onClick={props.onClose}/>
+          Корзина<img className="remove-btn cu-p" src="/img/btn-remove.svg" alt="Remove" onClick={onClose}/>
         </h2>
         <div className="items">
+          {items.map((obj) => (
             <div className="cart-Item d-flex align-center mb-20">
-              <div className="cart-Item__img" style={{backgroundImage: 'url(/img/sneackers/2.jpg)'}}></div>
-              <div className="mr-20 flex">
-                <p className="mb-5">Мужские Кроссовки Nike Air Max 270</p>
-                <b>12 999 руб.</b>
-              </div>
-             <img className="remove-btn" src="/img/btn-remove.svg" alt="Remove"/>
+            <div className="cart-Item__img" style={{backgroundImage: `url(${obj.imageUrl})`}}></div>
+           <div className="mr-20 flex">
+              <p className="mb-5">{obj.title}</p>
+             <b>{obj.price}</b>
            </div>
-
-            <div className="cart-Item d-flex align-center mb-20">
-              <div className="cart-Item__img" style={{backgroundImage: 'url(/img/sneackers/3.jpg)'}}></div>
-             <div className="mr-20 flex">
-                <p className="mb-5">Мужские Кроссовки Nike Air Max 270</p>
-               <b>12 999 руб.</b>
-             </div>
-             <img className="remove-btn" src="/img/btn-remove.svg" alt="Remove"/>
-          </div>
-
+           <img className="remove-btn" src="/img/btn-remove.svg" alt="Remove"/>
+        </div>
+          ))}
         </div>
         <div className="cart__total-blog">
           <ul>
